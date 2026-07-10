@@ -1,0 +1,748 @@
+/* ==========================================
+   GOOGLE FONT
+========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ==========================================
+   CSS VARIABLES
+========================================== */
+
+:root{
+
+    --primary:#4F46E5;
+    --secondary:#06B6D4;
+    --accent:#9333EA;
+
+    --bg:#f5f7fb;
+    --card:#ffffff;
+
+    --text:#111827;
+    --text-light:#6b7280;
+
+    --border:#e5e7eb;
+
+    --shadow:0 10px 30px rgba(0,0,0,.08);
+
+    --radius:16px;
+
+    --transition:.35s ease;
+
+}
+
+/* Dark Mode */
+
+body.dark{
+
+    --bg:#0f172a;
+    --card:#1e293b;
+
+    --text:#ffffff;
+    --text-light:#cbd5e1;
+
+    --border:#334155;
+
+    --shadow:0 10px 35px rgba(0,0,0,.45);
+
+}
+
+/* ==========================================
+   RESET
+========================================== */
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    transition:var(--transition);
+
+}
+
+img{
+
+    max-width:100%;
+    display:block;
+
+}
+
+a{
+
+    text-decoration:none;
+    color:inherit;
+
+}
+
+ul{
+
+    list-style:none;
+
+}
+
+/* ==========================================
+   COMMON
+========================================== */
+
+.container{
+
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+
+}
+
+section{
+
+    padding:90px 8%;
+
+}
+
+h1{
+
+    font-size:60px;
+    font-weight:700;
+
+}
+
+h2{
+
+    font-size:38px;
+    margin-bottom:20px;
+
+}
+
+h3{
+
+    font-size:22px;
+
+}
+
+p{
+
+    color:var(--text-light);
+    line-height:1.8;
+
+}
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+.btn{
+
+    display:inline-block;
+    padding:14px 34px;
+    border-radius:50px;
+    font-weight:600;
+    transition:var(--transition);
+    margin-top:20px;
+
+}
+
+.primary{
+
+    background:var(--primary);
+    color:white;
+
+}
+
+.primary:hover{
+
+    transform:translateY(-5px);
+    box-shadow:0 15px 25px rgba(79,70,229,.35);
+
+}
+
+.secondary{
+
+    border:2px solid var(--primary);
+    color:var(--primary);
+    margin-left:15px;
+
+}
+
+.secondary:hover{
+
+    background:var(--primary);
+    color:#fff;
+
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+header{
+
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    z-index:1000;
+
+    backdrop-filter:blur(12px);
+
+    background:rgba(255,255,255,.75);
+
+    border-bottom:1px solid rgba(255,255,255,.2);
+
+}
+
+body.dark header{
+
+    background:rgba(15,23,42,.85);
+
+}
+
+.navbar{
+
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 0;
+
+}
+
+.logo a{
+
+    font-size:28px;
+    font-weight:700;
+    color:var(--primary);
+
+}
+
+.nav-links{
+
+    display:flex;
+    gap:35px;
+
+}
+
+.nav-links a{
+
+    font-weight:500;
+    position:relative;
+
+}
+
+.nav-links a:hover,
+.nav-links .active{
+
+    color:var(--primary);
+
+}
+
+.nav-links a::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:0;
+
+    height:2px;
+
+    left:0;
+
+    bottom:-5px;
+
+    background:var(--primary);
+
+    transition:.3s;
+
+}
+
+.nav-links a:hover::after{
+
+    width:100%;
+
+}
+
+.nav-right{
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+}
+
+#themeToggle{
+
+    width:45px;
+    height:45px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    color:#fff;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+}
+
+.menu-btn{
+
+    display:none;
+    font-size:24px;
+    cursor:pointer;
+
+}
+
+/* ==========================================
+   HERO
+========================================== */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:70px;
+
+    padding-top:120px;
+
+}
+
+.hero-content{
+
+    flex:1;
+
+}
+
+.hero-content p:first-child{
+
+    color:var(--primary);
+    font-weight:600;
+    margin-bottom:10px;
+
+}
+
+.hero-content h2{
+
+    font-size:28px;
+    color:var(--text-light);
+    margin:15px 0;
+
+}
+
+.hero-content h2 span{
+
+    color:var(--primary);
+
+}
+
+.hero-text{
+
+    max-width:600px;
+
+}
+
+.hero-buttons{
+
+    margin-top:30px;
+
+}
+
+.hero-image{
+
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.hero-image img{
+
+    width:380px;
+
+    height:380px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:8px solid var(--primary);
+
+    box-shadow:var(--shadow);
+
+    transition:.4s;
+
+}
+
+.hero-image img:hover{
+
+    transform:scale(1.05);
+
+}
+/* ==========================================
+   HOME ABOUT
+========================================== */
+
+.home-about{
+
+    text-align:center;
+
+}
+
+.home-about p{
+
+    max-width:800px;
+
+    margin:20px auto;
+
+}
+
+/* ==========================================
+   FEATURED SKILLS
+========================================== */
+
+.featured-skills{
+
+    text-align:center;
+
+}
+
+.skill-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+
+    margin-top:50px;
+
+}
+
+.skill-card{
+
+    background:var(--card);
+
+    padding:40px 20px;
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+    transition:.35s;
+
+    border:1px solid var(--border);
+
+}
+
+.skill-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.skill-card i{
+
+    font-size:55px;
+
+    color:var(--primary);
+
+    margin-bottom:20px;
+
+}
+
+.skill-card h3{
+
+    margin-top:10px;
+
+}
+
+/* ==========================================
+   PROJECTS
+========================================== */
+
+.featured-projects{
+
+    text-align:center;
+
+}
+
+.project-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:30px;
+
+    margin:50px 0;
+
+}
+
+.project-card{
+
+    background:var(--card);
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow);
+
+    transition:.4s;
+
+    border:1px solid var(--border);
+
+}
+
+.project-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.project-card img{
+
+    width:100%;
+
+    height:220px;
+
+    object-fit:cover;
+
+}
+
+.project-card h3{
+
+    padding:20px 20px 10px;
+
+}
+
+.project-card p{
+
+    padding:0 20px 25px;
+
+}
+
+/* ==========================================
+   CTA
+========================================== */
+
+.cta{
+
+    text-align:center;
+
+    background:linear-gradient(135deg,var(--primary),var(--accent));
+
+    color:#fff;
+
+    border-radius:20px;
+
+    margin:60px 8%;
+
+}
+
+.cta h2{
+
+    color:#fff;
+
+}
+
+.cta p{
+
+    color:#f3f4f6;
+
+    margin-bottom:20px;
+
+}
+
+.cta .btn{
+
+    background:#fff;
+
+    color:var(--primary);
+
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer{
+
+    background:#111827;
+
+    color:#fff;
+
+    text-align:center;
+
+    padding:50px 20px;
+
+}
+
+footer p{
+
+    color:#cbd5e1;
+
+}
+
+.social-links{
+
+    margin:25px 0;
+
+}
+
+.social-links a{
+
+    display:inline-flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    color:#fff;
+
+    margin:0 8px;
+
+    transition:.3s;
+
+}
+
+.social-links a:hover{
+
+    transform:translateY(-5px) rotate(360deg);
+
+}
+
+/* ==========================================
+   SIMPLE FADE ANIMATION
+========================================== */
+
+.hero,
+.home-about,
+.featured-skills,
+.featured-projects,
+.cta{
+
+    animation:fadeUp .8s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+/* ==========================
+   SCROLL ANIMATION
+========================== */
+
+.hidden{
+
+    opacity:0;
+    transform:translateY(50px);
+    transition:all .8s ease;
+
+}
+
+.show{
+
+    opacity:1;
+    transform:translateY(0);
+
+}
+/* ==========================
+   CONTACT FORM
+========================== */
+
+.contact-form{
+
+    max-width:700px;
+    margin:auto;
+
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+
+}
+
+.contact-form input,
+.contact-form textarea{
+
+    padding:18px;
+
+    border:1px solid var(--border);
+
+    border-radius:12px;
+
+    background:var(--card);
+
+    color:var(--text);
+
+    font-size:16px;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+
+    border-color:var(--primary);
+
+}
+
+.contact-form button{
+
+    width:220px;
+
+}
